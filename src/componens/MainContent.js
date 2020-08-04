@@ -1,9 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Container, Paper, Grid, Toolbar } from "@material-ui/core";
+import { Container, Paper, Grid, Toolbar, Divider } from "@material-ui/core";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
-import { SearchSharp } from "@material-ui/icons";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
 
@@ -11,6 +10,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import Select from "@material-ui/core/Select";
 import TextField from "@material-ui/core/TextField";
+import TablePagination from '@material-ui/core/TablePagination';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,6 +38,17 @@ const MainContent = () => {
   const classes = useStyles();
 
   const [age, setAge] = React.useState("");
+  const [page, setPage] = React.useState(2);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
 
   const handleCategoryChange = (event) => {
     setAge(event.target.value);
@@ -49,7 +61,7 @@ const MainContent = () => {
   function FormRow() {
     return (
       <React.Fragment>
-        <Grid item xs={3}>
+        <Grid item xs={6} md={3}>
           <Paper className={classes.paper}>
             <FormControl className={classes.margin}>
               <TextField
@@ -60,7 +72,7 @@ const MainContent = () => {
             </FormControl>
           </Paper>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={6} md={3}>
           <Paper className={classes.paper}>
             <FormControl className={classes.formControl}>
               <InputLabel id="demo-simple-select-helper-label">
@@ -83,7 +95,7 @@ const MainContent = () => {
             </FormControl>
           </Paper>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={6} md={3}>
           <Paper className={classes.paper}>
             <FormControl className={classes.formControl}>
               <InputLabel id="demo-simple-select-helper-label">
@@ -106,7 +118,7 @@ const MainContent = () => {
             </FormControl>
           </Paper>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={6} md={3}>
           <Paper className={classes.paper}>
             <Button
               variant="contained"
@@ -119,6 +131,18 @@ const MainContent = () => {
             >
               Search
             </Button>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Paper className={classes.paper}>
+          <TablePagination
+            component="div"
+            count={100}
+            page={page}
+            onChangePage={handleChangePage}
+            rowsPerPage={rowsPerPage}
+            onChangeRowsPerPage={handleChangeRowsPerPage}
+            />
           </Paper>
         </Grid>
       </React.Fragment>
