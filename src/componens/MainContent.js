@@ -10,9 +10,9 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import Select from "@material-ui/core/Select";
 import TextField from "@material-ui/core/TextField";
-import TablePagination from '@material-ui/core/TablePagination';
-import FileList from './FileList'
-
+import TablePagination from "@material-ui/core/TablePagination";
+import FileList from "./FileList";
+import Footer from "./Footer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -135,14 +135,18 @@ const MainContent = () => {
           </Paper>
         </Grid>
         <Grid item xs={12} md={6}>
+          
+        </Grid>
+
+        <Grid item xs={12} md={6}>
           <Paper className={classes.paper}>
-          <TablePagination
-            component="div"
-            count={100}
-            page={page}
-            onChangePage={handleChangePage}
-            rowsPerPage={rowsPerPage}
-            onChangeRowsPerPage={handleChangeRowsPerPage}
+            <TablePagination
+              component="div"
+              count={100}
+              page={page}
+              onChangePage={handleChangePage}
+              rowsPerPage={rowsPerPage}
+              onChangeRowsPerPage={handleChangeRowsPerPage}
             />
           </Paper>
         </Grid>
@@ -159,8 +163,10 @@ const MainContent = () => {
               <FormRow />
             </Grid>
           </Grid>
+          <hr />
           <Toolbar></Toolbar>
-          <FileList/>
+          <FileList />
+          <Footer />
         </div>
       </Paper>
     </Container>
