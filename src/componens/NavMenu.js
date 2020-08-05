@@ -50,11 +50,18 @@ export default function NavMenu() {
             Academic Hub
           </Typography>
           <IconButton>
-                <Badge
+                <Button
+                className={classes.badge}
+                >
+                My Account
+                </Button>
+            </IconButton>
+           <IconButton>
+                <Button
                 className={classes.badge}
                 >
                 Login
-                </Badge>
+                </Button>
             </IconButton>
             <IconButton aria-label="cart">
                 <Badge
@@ -64,6 +71,9 @@ export default function NavMenu() {
                 >
                 <ShoppingCartIcon />
                 </Badge>
+                <Button>
+                Cart
+                </Button>
             </IconButton>
         </Toolbar>
       </AppBar>

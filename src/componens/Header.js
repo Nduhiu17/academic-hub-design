@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Typography, Paper } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import NavMenu from "./NavMenu";
 
 const styles = (theme) => ({
