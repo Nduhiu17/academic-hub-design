@@ -22,8 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
       bottom: 0,
       left: 0,
       backgroundColor: "#fff",
-      color: "inherit",
-    //   boxShadow: "none",
+      color: "#F95700FF",
     },
   })
 );
