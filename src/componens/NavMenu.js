@@ -8,6 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
+import { Cart } from './Cart';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,7 +64,10 @@ export default function NavMenu() {
                 Login
                 </Button>
             </IconButton>
-            <IconButton aria-label="cart">
+            <IconButton>
+                <Button
+                className={classes.badge}
+                >
                 <Badge
                 badgeContent={4}
                 color="secondary"
@@ -71,7 +75,6 @@ export default function NavMenu() {
                 >
                 <ShoppingCartIcon />
                 </Badge>
-                <Button>
                 Cart
                 </Button>
             </IconButton>

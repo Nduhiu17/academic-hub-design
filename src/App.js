@@ -1,14 +1,14 @@
 import React from "react";
-import  Header from "./componens/Header" 
-import MainContent from "./componens/MainContent"
+import Main from "./componens/Main";
 import { Typography } from "@material-ui/core";
-
+import Layout from "./componens/Layout";
 
 function App() {
   return (
     <Typography>
-      <Header />
-      <MainContent/>
+      <Layout>
+        <Main />
+      </Layout>
     </Typography>
   );
 }
