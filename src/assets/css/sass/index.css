@@ -13,6 +13,20 @@ a {
   text-decoration: none;
 }
 
+@media (max-width: 854px) {
+  .file-image {
+    display: none;
+  }
+  .price-add-to-cart {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .header-wrapper {
   background-image: url(../../images/writing.jpeg);
   background-position: center;

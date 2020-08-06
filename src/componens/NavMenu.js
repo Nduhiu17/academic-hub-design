@@ -9,11 +9,13 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
 import { Link } from "react-router-dom";
-import history from "../history";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    zIndex: 4,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -22,26 +24,34 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   AppBar: {
-    backgroundColor: "transparent",
+    // backgroundColor: "#fff",
   },
   badge: {
     border: `2px solid ${theme.palette.background.paper}`,
   },
-  links:{
-    textDecoration:'none'
-  }
+  links: {
+    textDecoration: "none",
+  },
 }));
 
 export default function NavMenu() {
   const classes = useStyles();
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className={classes.root}>
       <AppBar
         position="static"
-        style={{ background: "transparent", boxShadow: "none" }}
+        style={{ background: "#fff", boxShadow: "none" }}
       >
         <Toolbar>
           <IconButton
@@ -53,31 +63,42 @@ export default function NavMenu() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            <Link to="/">
-                Academic Hub
-            </Link>
+            <Link to="/">Academic Hub</Link>
           </Typography>
           <Link to="/account" className={classes.links}>
-            <IconButton>
-              <Button className={classes.badge}>My Account</Button>
-            </IconButton>
+            <Button className={classes.badge}>ADMIN</Button>
           </Link>
 
-          <Link to="/login" className={classes.links}>
-            <IconButton>
-              <Button className={classes.badge}>Login</Button>
-            </IconButton>
-          </Link>
           <Link to="/cart" className={classes.links}>
-            <IconButton>
-              <Button className={classes.badge}>
-                <Badge badgeContent={4} color="secondary" className={""}>
-                  <ShoppingCartIcon />
-                </Badge>
-                Cart
-              </Button>
-            </IconButton>
+            <Button className={classes.badge}>
+              <Badge badgeContent={4} color="secondary" className={""}>
+                <ShoppingCartIcon />
+              </Badge>
+              Cart
+            </Button>
           </Link>
+
+          <Button className={classes.badge} onClick={handleClick}>
+            Login
+          </Button>
+
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            autoFocus
+          >
+            <Link to="/login" className={classes.links}>
+              <MenuItem onClick={handleClose}>Login</MenuItem>
+            </Link>
+            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <Link to="/register" className={classes.links}>
+              <MenuItem onClick={handleClose}>Register</MenuItem>
+            </Link>
+            <MenuItem onClick={handleClose}>Logout</MenuItem>
+          </Menu>
         </Toolbar>
       </AppBar>
     </div>

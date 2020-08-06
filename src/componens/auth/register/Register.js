@@ -7,13 +7,13 @@ import {
   Toolbar,
   Button,
 } from "@material-ui/core";
-import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   mainwrapper: {
     marginTop: -40,
-    // padding:20
+    padding: 20,
   },
 
   wrapper: {
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Login = () => {
+export const Register = () => {
   const classes = useStyles();
   return (
     <Container className={classes.mainwrapper} elevation={8}>
@@ -37,37 +37,23 @@ export const Login = () => {
           <Grid item md={6} className={classes.wrapper} sm={12} xs={12}>
             <Paper elevation={8}>
               <Typography variant="h6" className={classes.title}>
-                Login
+                REGISTER
               </Typography>
-              <LoginForm />
+              <RegisterForm />
             </Paper>
           </Grid>
           <Grid item md={6} className={classes.wrapper} sm={12} xs={12}>
             <Paper elevation={8}>
               <Typography variant="h6" className={classes.title}>
-                Create you Academic hub account
+                Sign in into your Academic hub account
               </Typography>
               <Grid item md={12} sm={12} xs={12}>
                 <Toolbar></Toolbar>
-                <Typography variant='subtitle1'>
-                  Create your Academic Hub user customer account in just a few
-                  clicks! You can register either using your e-mail address or
-                  through your Facebook account.
+                <Typography variant="subtitle1">
+                  Sign in into your Academic Hub user customer account in just a
+                  few clicks! You can sign in either using your e-mail address
+                  or through your Facebook account.
                 </Typography>
-              </Grid>
-              <Grid item md={12} sm={12} xs={12}>
-                <Toolbar></Toolbar>
-                <Button
-                  variant="contained"
-                  className={classes.button}
-                  style={{
-                    backgroundColor: "#F95700FF",
-                    color: "#fff",
-                    width: "80%",
-                  }}
-                >
-                  CREATE WITH EMAIL
-                </Button>
               </Grid>
               <Grid item md={12} sm={12} xs={12}>
                 <Toolbar></Toolbar>
@@ -81,9 +67,24 @@ export const Login = () => {
                     width: "80%",
                   }}
                 >
-                  CREATE WITH FACEBOOK
+                  LOGIN WITH FACEBOOK
                 </Button>
               </Grid>
+              <Grid item md={12} sm={12} xs={12}>
+                <Toolbar></Toolbar>
+                <Button
+                  variant="contained"
+                  className={classes.button}
+                  style={{
+                    backgroundColor: "#F95700FF",
+                    color: "#fff",
+                    width: "80%",
+                  }}
+                >
+                  LOGIN WITH EMAIL
+                </Button>
+              </Grid>
+
               <Grid item md={12} sm={12} xs={12}>
                 <Toolbar></Toolbar>
                 <Button
@@ -95,7 +96,7 @@ export const Login = () => {
                     width: "80%",
                   }}
                 >
-                  CREATE WITH TWITTER
+                  LOGIN WITH TWITTER
                 </Button>
               </Grid>
               <Grid item md={12} sm={12} xs={12}>
@@ -109,7 +110,7 @@ export const Login = () => {
                     width: "80%",
                   }}
                 >
-                  CREATE WITH GOGGLE
+                  LOGIN WITH GOOGLE
                 </Button>
               </Grid>
               <Toolbar></Toolbar>

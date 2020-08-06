@@ -12,4 +12,14 @@ a {
   text-decoration: none;
 }
 
+@media (max-width: 854px) {
+  .file-image {
+    display: none;
+  }
+  .price-add-to-cart {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 @import "header";

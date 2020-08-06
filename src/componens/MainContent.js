@@ -62,7 +62,7 @@ const MainContent = () => {
   function FormRow() {
     return (
       <React.Fragment>
-        <Grid item xs={6} md={3}>
+        <Grid item xs={12} md={3} sm={12}>
           <Paper className={classes.paper} elevation={4}>
             <FormControl className={classes.margin}>
               <TextField
@@ -73,7 +73,7 @@ const MainContent = () => {
             </FormControl>
           </Paper>
         </Grid>
-        <Grid item xs={6} md={3}>
+        <Grid item xs={12} md={3} sm={12}>
           <Paper className={classes.paper} elevation={4}>
             <FormControl className={classes.formControl}>
               <InputLabel id="demo-simple-select-helper-label">
@@ -96,7 +96,7 @@ const MainContent = () => {
             </FormControl>
           </Paper>
         </Grid>
-        <Grid item xs={6} md={3}>
+        <Grid item xs={12} md={3} sm={12}>
           <Paper className={classes.paper} elevation={4}>
             <FormControl className={classes.formControl}>
               <InputLabel id="demo-simple-select-helper-label">
@@ -119,7 +119,7 @@ const MainContent = () => {
             </FormControl>
           </Paper>
         </Grid>
-        <Grid item xs={6} md={3}>
+        <Grid item xs={12} md={3} sm={12}>
           <Paper className={classes.paper} elevation={4}>
             <Button
               variant="contained"

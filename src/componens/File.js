@@ -18,7 +18,7 @@ const File = () => {
       <Paper elevation={4}>
         <Grid container spacing={2}>
           <Grid item md={1}>
-            <img src={wordImg} alt="" style={{ width: "100%" }} />
+            <img src={wordImg} alt="" style={{ width: "100%" }} className='file-image'/>
           </Grid>
           <Grid item md={9}>
             <Typography
@@ -55,7 +55,7 @@ const File = () => {
               </Accordion>
             </div>
           </Grid>
-          <Grid item md={2}>
+          <Grid item md={2} sm={12} className='price-add-to-cart'>
             <Typography>
               <Button variant="fab" large style={{ color: "#ff8c00" }}>
                 <AttachMoneyIcon fontSize="large" />

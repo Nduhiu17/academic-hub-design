@@ -3,6 +3,7 @@ import { Container, Grid, Typography } from "@material-ui/core";
 import { Paper, Toolbar } from "@material-ui/core";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import CartList from "./CartList";
+import paypalImg from '../../assets/images/paypal.png'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -24,7 +25,8 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: 20,
     },
     yellow:{
-      color:'#ff8c00'
+      color:'#ff8c00',
+      fontWeight:'bold'
     }
   })
 );
@@ -53,35 +55,45 @@ export const Cart = () => {
         <CartList />
         <Paper className={classes.totalwrapper} elevation={8}>
           <Grid container justify="flex-end">
-            <Grid item md={4}></Grid>
+            <Grid item md={8} style={{color:'blue'}}>
+              Pay using paypal
+              <img alt='paypal' src={paypalImg} style={{maxWidth:60,maxHeight:60}}/>
+            </Grid>
             <Grid
               md={4}
+              sm={12}
+              xs={12}
               item
               style={{ display: "flex", justifyContent: "space-between" }}
               spacing={2}
             >
               <Paper className={classes.subtotal} elevation={4}>
-                <Typography variant="h6">Subtotal</Typography>
+                <Typography variant="h6" className={classes.yellow}>Subtotal</Typography>
               </Paper>
               <Paper className={classes.subtotal} elevation={4}>
-                <Typography variant="h6">Ksh 500</Typography>
+                <Typography variant="h6" className={classes.yellow}>Ksh 500</Typography>
               </Paper>
             </Grid>
           </Grid>
           <Toolbar></Toolbar>
           <Grid container justify="flex-end">
-            <Grid item md={4}></Grid>
+            <Grid item md={4} style={{color:'blue'}}>
+            Pay using paypal
+              <img alt='paypal' src={paypalImg} style={{maxWidth:60,maxHeight:60}}/>
+            </Grid>
             <Grid
               md={4}
+              xs={12}
+              sm={12}
               item
               style={{ display: "flex", justifyContent: "space-between" }}
               spacing={2}
             >
               <Paper className={classes.subtotal} elevation={4}>
-                <Typography variant="h6">Total</Typography>
+                <Typography variant="h6" className={classes.yellow}>Total</Typography>
               </Paper>
               <Paper className={classes.subtotal} elevation={4}>
-                <Typography variant="h6">Ksh 500</Typography>
+                <Typography variant="h6" className={classes.yellow}>Ksh 500</Typography>
               </Paper>
             </Grid>
           </Grid>
@@ -89,11 +101,13 @@ export const Cart = () => {
           <Grid container justify="flex-end">
             <Grid
               md={6}
+              sm={12}
               item
               style={{ display: "flex", justifyContent: "space-between" }}
               spacing={2}
+              className='cart-cards'
             >
-              <Paper className={classes.subtotal}>
+              <Paper className={classes.subtotal} >
                 <Typography variant="h6" className={classes.yellow}>Continue Shopping</Typography>
               </Paper>
               <Paper className={classes.subtotal} >
