@@ -8,7 +8,8 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
-import { Cart } from './Cart';
+import { Link } from "react-router-dom";
+import history from "../history";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
-   
   },
   title: {
     flexGrow: 1,
@@ -27,10 +27,15 @@ const useStyles = makeStyles((theme) => ({
   badge: {
     border: `2px solid ${theme.palette.background.paper}`,
   },
+  links:{
+    textDecoration:'none'
+  }
 }));
 
 export default function NavMenu() {
   const classes = useStyles();
+
+
 
   return (
     <div className={classes.root}>
@@ -48,36 +53,31 @@ export default function NavMenu() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Academic Hub
+            <Link to="/">
+                Academic Hub
+            </Link>
           </Typography>
-          <IconButton>
-                <Button
-                className={classes.badge}
-                >
-                My Account
-                </Button>
-            </IconButton>
-           <IconButton>
-                <Button
-                className={classes.badge}
-                >
-                Login
-                </Button>
-            </IconButton>
+          <Link to="/account" className={classes.links}>
             <IconButton>
-                <Button
-                className={classes.badge}
-                >
-                <Badge
-                badgeContent={4}
-                color="secondary"
-                className={""}
-                >
-                <ShoppingCartIcon />
+              <Button className={classes.badge}>My Account</Button>
+            </IconButton>
+          </Link>
+
+          <Link to="/login" className={classes.links}>
+            <IconButton>
+              <Button className={classes.badge}>Login</Button>
+            </IconButton>
+          </Link>
+          <Link to="/cart" className={classes.links}>
+            <IconButton>
+              <Button className={classes.badge}>
+                <Badge badgeContent={4} color="secondary" className={""}>
+                  <ShoppingCartIcon />
                 </Badge>
                 Cart
-                </Button>
+              </Button>
             </IconButton>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>
