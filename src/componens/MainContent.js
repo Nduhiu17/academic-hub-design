@@ -63,7 +63,7 @@ const MainContent = () => {
     return (
       <React.Fragment>
         <Grid item xs={6} md={3}>
-          <Paper className={classes.paper}>
+          <Paper className={classes.paper} elevation={4}>
             <FormControl className={classes.margin}>
               <TextField
                 id="standard-helperText"
@@ -74,7 +74,7 @@ const MainContent = () => {
           </Paper>
         </Grid>
         <Grid item xs={6} md={3}>
-          <Paper className={classes.paper}>
+          <Paper className={classes.paper} elevation={4}>
             <FormControl className={classes.formControl}>
               <InputLabel id="demo-simple-select-helper-label">
                 Category
@@ -97,7 +97,7 @@ const MainContent = () => {
           </Paper>
         </Grid>
         <Grid item xs={6} md={3}>
-          <Paper className={classes.paper}>
+          <Paper className={classes.paper} elevation={4}>
             <FormControl className={classes.formControl}>
               <InputLabel id="demo-simple-select-helper-label">
                 Subcategory
@@ -120,7 +120,7 @@ const MainContent = () => {
           </Paper>
         </Grid>
         <Grid item xs={6} md={3}>
-          <Paper className={classes.paper}>
+          <Paper className={classes.paper} elevation={4}>
             <Button
               variant="contained"
               color="inherit"
@@ -139,7 +139,7 @@ const MainContent = () => {
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <Paper className={classes.paper}>
+          <Paper className={classes.paper} >
             <TablePagination
               component="div"
               count={100}
@@ -155,7 +155,7 @@ const MainContent = () => {
   }
   return (
     <Container>
-      <Paper style={{ marginTop: -50 }} className="container">
+      <Paper style={{ marginTop: -50,padding:20 }} className="container" elevation={10}>
         <Toolbar></Toolbar>
         <div className={classes.root}>
           <Grid container spacing={1}>

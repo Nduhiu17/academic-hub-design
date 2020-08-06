@@ -4,7 +4,7 @@ import File from './File'
 
 const FileList = () => {
     return (
-        <Paper>
+        <Paper elevation={8} style={{padding:20}}>
             <File />
             <File />
             <File />

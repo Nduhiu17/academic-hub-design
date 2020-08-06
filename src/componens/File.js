@@ -21,7 +21,16 @@ const File = () => {
             <img src={wordImg} alt="" style={{ width: "100%" }} />
           </Grid>
           <Grid item md={9}>
-            <Typography variant="h6" style={{fontWeight:700,fontSize: '1.2rem',lineHeight:1.2,color:'#212121'}}>
+            <Typography
+              variant="h6"
+              style={{
+                fontWeight: 700,
+                fontSize: "1.2rem",
+                lineHeight: 1.2,
+                // color: "#F95700FF",
+                color: "#2F4F4F",
+              }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
               lobortis gravida tempus. Etiam et aliquam magna. Nulla a sem sit
               amet justo maximus ullamcorper a in nulla.
@@ -32,7 +41,9 @@ const File = () => {
                 style={{ border: "none !important", boxShadow: "none" }}
               >
                 <AccordionSummary expandIcon={""} id="panel1a-header">
-                  <Link className={""} style={{color:'#617482'}}>View Details</Link>
+                  <Link className={""} style={{ color: "#617482" }}>
+                    View Details
+                  </Link>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>

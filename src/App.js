@@ -5,7 +5,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import history from "./history";
 import MainContent from "./componens/MainContent";
 import { Login } from "./componens/auth/login/Login";
-import { Cart } from "./componens/Cart";
+import { Cart } from "./componens/cart/Cart";
 import { MyAccount } from "./componens/myaccount/MyAccount";
 import { NotFound } from "./componens/NotFound";
 
