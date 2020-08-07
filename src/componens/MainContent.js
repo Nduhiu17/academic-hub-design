@@ -13,6 +13,7 @@ import TextField from "@material-ui/core/TextField";
 import TablePagination from "@material-ui/core/TablePagination";
 import FileList from "./FileList";
 import Footer from "./Footer";
+import Layout from './Layout';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -134,9 +135,7 @@ const MainContent = () => {
             </Button>
           </Paper>
         </Grid>
-        <Grid item xs={12} md={6}>
-          
-        </Grid>
+        <Grid item xs={12} md={6}></Grid>
 
         <Grid item xs={12} md={6}>
           <Paper className={classes.paper} elevation={4}>
@@ -154,22 +153,27 @@ const MainContent = () => {
     );
   }
   return (
-    <Container>
-      <Paper style={{ marginTop: -50,padding:20 }} className="container" elevation={10}>
-        <Toolbar></Toolbar>
-        <div className={classes.root}>
-          <Grid container spacing={1}>
-            <Grid container item xs={12} spacing={3}>
-              <FormRow />
-            </Grid>
-          </Grid>
-          <hr />
+    <Layout>
+      <Container>
+        <Paper
+          style={{ marginTop: -50, padding: 20 }}
+          className="container"
+          elevation={10}
+        >
           <Toolbar></Toolbar>
-          <FileList />
-          <Footer />
-        </div>
-      </Paper>
-    </Container>
+          <div className={classes.root}>
+            <Grid container spacing={1}>
+              <Grid container item xs={12} spacing={3}>
+                <FormRow />
+              </Grid>
+            </Grid>
+            <hr />
+            <Toolbar></Toolbar>
+            <FileList />
+          </div>
+        </Paper>
+      </Container>
+    </Layout>
   );
 };
 
