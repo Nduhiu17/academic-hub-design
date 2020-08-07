@@ -139,7 +139,7 @@ const MainContent = () => {
         </Grid>
 
         <Grid item xs={12} md={6}>
-          <Paper className={classes.paper} >
+          <Paper className={classes.paper} elevation={4}>
             <TablePagination
               component="div"
               count={100}
