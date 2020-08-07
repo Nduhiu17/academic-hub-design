@@ -4,7 +4,7 @@ import wordImg from "../../assets/images/download.png";
 import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import { Paper, Grid, Typography, Button } from "@material-ui/core";
+import { Paper, Grid, Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -47,7 +47,8 @@ export default function CartItem() {
         <Grid item md={2}>
           1
         </Grid>
-        <Grid item md={2}>
+        <Grid item md={2} style={{ color: "#ff8c00" }}>
+        <AttachMoneyIcon />
           100
         </Grid>
         <Grid item md={2} style={{ color: "#ff8c00" }}>

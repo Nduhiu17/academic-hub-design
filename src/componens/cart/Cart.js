@@ -4,6 +4,8 @@ import { Paper, Toolbar } from "@material-ui/core";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import CartList from "./CartList";
 import paypalImg from '../../assets/images/paypal.png'
+import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -71,7 +73,9 @@ export const Cart = () => {
                 <Typography variant="h6" className={classes.yellow}>Subtotal</Typography>
               </Paper>
               <Paper className={classes.subtotal} elevation={4}>
-                <Typography variant="h6" className={classes.yellow}>Ksh 500</Typography>
+                <Typography variant="h6" className={classes.yellow}>
+                <AttachMoneyIcon /> 
+                500.00</Typography>
               </Paper>
             </Grid>
           </Grid>
@@ -93,7 +97,10 @@ export const Cart = () => {
                 <Typography variant="h6" className={classes.yellow}>Total</Typography>
               </Paper>
               <Paper className={classes.subtotal} elevation={4}>
-                <Typography variant="h6" className={classes.yellow}>Ksh 500</Typography>
+                <Typography variant="h6" className={classes.yellow}>
+                <AttachMoneyIcon />
+                500.00
+                </Typography>
               </Paper>
             </Grid>
           </Grid>
