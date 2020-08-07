@@ -65,8 +65,8 @@ export default function NavMenu() {
           <Typography variant="h6" className={classes.title}>
             <Link to="/">Academic Hub</Link>
           </Typography>
-          <Link to="/account" className={classes.links}>
-            <Button className={classes.badge}>ADMIN</Button>
+          <Link to="/admin" className={classes.links}>
+            <Button className={classes.badge}>ADMIN DASHBOARD</Button>
           </Link>
 
           <Link to="/cart" className={classes.links}>
