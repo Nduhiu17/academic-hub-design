@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Link } from "react-router-dom";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,20 +30,22 @@ export const Nav = () => {
       style={{ backgroundColor: "#fff", color: "#F95700FF" }}
     >
       <Toolbar>
-        <IconButton
-          edge="start"
-          className={classes.menuButton}
-          color="inherit"
-          aria-label="menu"
-        >
-          <MenuIcon />
-        </IconButton>
-
         <Typography variant="h6" className={classes.title}>
-          <Link to="/">BACK TO CLIENT</Link>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+          >
+            <Link to="/">
+              <ArrowBackIosIcon />
+            </Link>
+          </IconButton>
+
+          <Link to="/">BACK TO WEBSITE</Link>
         </Typography>
 
-        <Button color="inherit">Login</Button>
+        <Button color="inherit">logout</Button>
       </Toolbar>
     </AppBar>
   );
