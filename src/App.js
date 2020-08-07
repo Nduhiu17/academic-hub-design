@@ -8,13 +8,12 @@ import { Cart } from "./componens/cart/Cart";
 import { MyAccount } from "./componens/myaccount/MyAccount";
 import { NotFound } from "./componens/NotFound";
 import { Register } from "./componens/auth/register/Register";
-import { Admin } from './componens/admin/Admin';
+import Admin from './componens/admin/Admin';
 
 function App() {
   return (
     <BrowserRouter history={history}>
       <Typography>
-        {/* <Layout> */}
         <Switch>
           <Route exact path="/" component={MainContent}></Route>
           <Route exact path="/login" component={Login}></Route>
@@ -24,7 +23,6 @@ function App() {
           <Route exact path="/admin" component={Admin}></Route>
           <Route exact component={NotFound}></Route>
         </Switch>
-        {/* </Layout> */}
       </Typography>
     </BrowserRouter>
   );
