@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Login = () => {
+const Login = () => {
   const classes = useStyles();
   return (
     <Layout>
@@ -123,3 +123,6 @@ export const Login = () => {
     </Layout>
   );
 };
+
+
+export default Login

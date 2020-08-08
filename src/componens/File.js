@@ -24,10 +24,9 @@ const File = () => {
             <Typography
               variant="h6"
               style={{
-                fontWeight: 700,
+                fontWeight: 500,
                 fontSize: "1.2rem",
                 lineHeight: 1.2,
-                // color: "#F95700FF",
                 color: "#2F4F4F",
               }}
             >

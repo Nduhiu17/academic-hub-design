@@ -15,10 +15,10 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import { Link } from "react-router-dom";
-import { Paper } from "@material-ui/core";
+import { supportRoutes } from "./dashboardRoutes";
+import dashboardRoutes from "./dashboardRoutes";
+import { AdminFooter } from './AdminFooter';
 
 const drawerWidth = 240;
 
@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Admin = () => {
+const AdminLayout = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -105,6 +105,7 @@ const Admin = () => {
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
+        style={{backgroundColor:'#fff',color:'#F95700FF'}}
       >
         <Toolbar>
           <IconButton
@@ -149,53 +150,37 @@ const Admin = () => {
         </div>
         <Divider />
         <List>
-          {["Files", "Categories", "Sub categories", "Users"].map(
-            (text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            )
-          )}
+          {dashboardRoutes.map((route, index) => {
+            return (
+              <Link to={route.path}>
+                <ListItem button key={route.name}>
+                  <ListItemIcon>{route.icon}</ListItemIcon>
+                  <ListItemText primary={route.name} />
+                </ListItem>
+              </Link>
+            );
+          })}
         </List>
         <Divider />
         <List>
-          {["Sales Reports", "Financial Reports", "Market Analysis"].map(
-            (text, index) => (
-              
-              <ListItem button key={text}>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
+          {supportRoutes.map((route) => (
+            <Link to={route.path}>
+              <ListItem button key={route.name}>
+                <ListItemIcon>{route.icon}</ListItemIcon>
+                <ListItemText primary={route.name} />
               </ListItem>
-          
-            )
-          )}
+            </Link>
+          ))}
         </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at
-          ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum
-          quisque non tellus. Convallis convallis tellus id interdum velit
-          laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed
-          adipiscing. Amet nisl suscipit adipiscing bibendum est ultricies
-          integer quis. Cursus euismod quis viverra nibh cras. Metus vulputate
-          eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo
-          quis imperdiet massa tincidunt. Cras tincidunt lobortis feugiat
-          vivamus at augue. At augue eget arcu dictum varius duis at consectetur
-          lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
-          faucibus et molestie ac.
-        </Typography>
+        <Typography paragraph>{props.children}</Typography>
+      <AdminFooter/>
+
       </main>
     </div>
   );
 };
 
-export default Admin;
+export default AdminLayout;

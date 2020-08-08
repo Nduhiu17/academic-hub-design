@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export const Cart = () => {
+const Cart = () => {
   const classes = useStyles();
   return (
     <Layout>
@@ -146,3 +146,5 @@ export const Cart = () => {
     </Layout>
   );
 };
+
+export default Cart

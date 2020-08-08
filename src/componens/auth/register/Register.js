@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Register = () => {
+const Register = () => {
   const classes = useStyles();
   return (
     <Layout>
@@ -124,3 +124,6 @@ export const Register = () => {
     </Layout>
   );
 };
+
+
+export default Register
