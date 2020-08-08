@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Paper,
   Typography,
@@ -12,6 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import Zoom from "@material-ui/core/Zoom";
+import { CustomDialog } from "../../../shared/CustomModal";
 
 const useStyles = makeStyles((theme) => ({
   Paper: {
@@ -27,6 +28,15 @@ const useStyles = makeStyles((theme) => ({
 
 const AdminFile = () => {
   const classes = useStyles();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleDialogClose = () => {
+    setIsOpen(false);
+  };
+
+  const handleDialogOpen = () => {
+    setIsOpen(true);
+  };
 
   return (
     <Typography gutterBottom>
@@ -74,13 +84,24 @@ const AdminFile = () => {
               </Button>
             </Tooltip>
             <Tooltip TransitionComponent={Zoom} title="Edit file content">
-              <Button variant="contained" size="small">
+              <Button
+                variant="contained"
+                size="small"
+                onClick={handleDialogOpen}
+              >
                 Edit
               </Button>
             </Tooltip>
           </Grid>
         </Grid>
       </Paper>
+      <CustomDialog
+        isOpen={isOpen}
+        handleClose={handleDialogClose}
+        title="Edit file"
+      >
+        <h1>Hello cheche</h1>
+      </CustomDialog>
     </Typography>
   );
 };

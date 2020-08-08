@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import AdminFile from "./AdminFile";
 import AdminLayout from "../AdminLayout";
 import PaginationComponent from "../../../shared/PaginationComponent";
 import { Grid, Button, Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { createStyles } from "@material-ui/core/styles";
+import { CustomDialog } from "../../../shared/CustomModal";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -17,6 +18,15 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const AdminFileList = () => {
   const classes = useStyles();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleDialogClose = () => {
+    setIsOpen(false);
+  };
+
+  const handleDialogOpen = () => {
+    setIsOpen(true);
+  };
   return (
     <AdminLayout>
       <Grid container spacing={1}>
@@ -33,7 +43,13 @@ const AdminFileList = () => {
       >
         <Paper elevation={4}>
           <Typography>
-            <Button style={{ backgroundColor: "#ff8c00", color: "#fff" }}>
+            <Button
+              style={{
+                backgroundColor: "#ff8c00",
+                color: "#fff",
+              }}
+              onClick={handleDialogOpen}
+            >
               Upload File
             </Button>
           </Typography>
@@ -44,6 +60,13 @@ const AdminFileList = () => {
       <AdminFile />
       <AdminFile />
       <AdminFile />
+      <CustomDialog
+        isOpen={isOpen}
+        handleClose={handleDialogClose}
+        title="Upload file"
+      >
+        <h1>Hello cheche</h1>
+      </CustomDialog>
     </AdminLayout>
   );
 };
