@@ -6,13 +6,20 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Link
+  Link,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   Paper: {
     padding: 20,
+    marginBottom:20
+  },
+  buttons: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
   },
 }));
 
@@ -51,7 +58,14 @@ const AdminFile = () => {
               </div>
             </Typography>
           </Grid>
-          <Grid item md={2}></Grid>
+          <Grid item md={2} className={classes.buttons}>
+            <Button variant="contained" color="secondary" size="small">
+              Delete
+            </Button>
+            <Button variant="contained" size="small">
+              Edit
+            </Button>
+          </Grid>
         </Grid>
       </Paper>
     </Typography>
