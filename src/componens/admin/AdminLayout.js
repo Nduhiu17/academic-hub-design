@@ -18,8 +18,9 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { Link } from "react-router-dom";
 import { supportRoutes } from "./dashboardRoutes";
 import dashboardRoutes from "./dashboardRoutes";
-import { AdminFooter } from './AdminFooter';
-
+import { AdminFooter } from "./AdminFooter";
+import Tooltip from "@material-ui/core/Tooltip";
+import Zoom from "@material-ui/core/Zoom";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -105,7 +106,7 @@ const AdminLayout = (props) => {
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
-        style={{backgroundColor:'#fff',color:'#F95700FF'}}
+        style={{ backgroundColor: "#fff", color: "#F95700FF" }}
       >
         <Toolbar>
           <IconButton
@@ -154,7 +155,9 @@ const AdminLayout = (props) => {
             return (
               <Link to={route.path}>
                 <ListItem button key={route.name}>
-                  <ListItemIcon>{route.icon}</ListItemIcon>
+                  <Tooltip TransitionComponent={Zoom} title={route.name}>
+                    <ListItemIcon>{route.icon}</ListItemIcon>
+                  </Tooltip>
                   <ListItemText primary={route.name} />
                 </ListItem>
               </Link>
@@ -166,7 +169,9 @@ const AdminLayout = (props) => {
           {supportRoutes.map((route) => (
             <Link to={route.path}>
               <ListItem button key={route.name}>
-                <ListItemIcon>{route.icon}</ListItemIcon>
+                <Tooltip TransitionComponent={Zoom} title={route.name}>
+                  <ListItemIcon>{route.icon}</ListItemIcon>
+                </Tooltip>
                 <ListItemText primary={route.name} />
               </ListItem>
             </Link>
@@ -176,8 +181,7 @@ const AdminLayout = (props) => {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>{props.children}</Typography>
-      <AdminFooter/>
-
+        <AdminFooter />
       </main>
     </div>
   );

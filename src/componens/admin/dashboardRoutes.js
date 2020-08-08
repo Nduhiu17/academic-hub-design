@@ -1,59 +1,58 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { green } from '@material-ui/core/colors';
-import Icon from '@material-ui/core/Icon';
-import AdminDashboard from './dashboard/AdminDashboard';
-
-
+import React from "react";
+import AdminDashboard from "./dashboard/AdminDashboard";
+import DashboardIcon from "@material-ui/icons/Dashboard";
+import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
+import CategoryIcon from "@material-ui/icons/Category";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
+import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
 
 const dashboardRoutes = [
-    {
-        path: "/admin",
-        component: AdminDashboard, // dashboard
-        name: 'Dasboard',
-        icon:<Icon>add_circle</Icon>,
-        routes: []
-    },
-    {
-        path: "/admin/files",
-        component: FileList,
-        name: 'Files',
-        icon: <Icon>add_circle</Icon>,
-        routes:[] 
-    }
-]
-
-
-
-
+  {
+    path: "/admin",
+    component: AdminDashboard, // dashboard
+    name: "Dasboard",
+    icon: <DashboardIcon color="action" fontSize="large" />,
+    routes: [],
+  },
+  {
+    path: "/admin/files",
+    component: FileList,
+    name: "Files",
+    icon: <LibraryBooksIcon color="action"  fontSize="large"/>,
+    routes: [],
+  },
+  {
+    path: "/admin/categories",
+    component: FileList,
+    name: "Categories",
+    icon: <CategoryIcon color="action"  fontSize="large"/>,
+    routes: [],
+  },
+];
 
 export const supportRoutes = [
-    {
-        path: "/admin/sales",
-        component: AdminDashboard, // dashboard
-        name: 'Sales Reports',
-        icon:<Icon>add_circle</Icon>,
-        routes: []
-    },
-    {
-        path: "/admin/finance",
-        component: FileList,
-        name: 'Financial Reports',
-        icon: <Icon>add_circle</Icon>,
-        routes:[] 
-    },
-    {
-        path: "/admin/market",
-        component: FileList,
-        name: 'Market Analysis',
-        icon: <Icon>add_circle</Icon>,
-        routes:[] 
-    },
+  {
+    path: "/admin/users",
+    component: AdminDashboard, // dashboard
+    name: "Users",
+    icon: <AccountCircleIcon color="action"  fontSize="large"/>,
+    routes: [],
+  },
+  {
+    path: "/admin/admin",
+    component: FileList,
+    name: "Orders",
+    icon: <BusinessCenterIcon color="action"  fontSize="large"/>,
+    routes: [],
+  },
+  {
+    path: "/admin/market",
+    component: FileList,
+    name: "Accounts",
+    icon: <AccountBalanceIcon color="action"  fontSize="large"/>,
+    routes: [],
+  },
+];
 
-]
-
-export default dashboardRoutes
-
-
-
-
+export default dashboardRoutes;
