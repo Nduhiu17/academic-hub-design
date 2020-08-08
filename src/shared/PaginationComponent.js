@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
-    padding: 15,
+    padding: 10,
     textAlign: "center",
     color: theme.palette.text.secondary,
   },

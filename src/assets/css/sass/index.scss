@@ -20,6 +20,12 @@ a {
     display: flex;
     justify-content: space-between;
   }
+
+  #edit-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 @import "header";

@@ -58,7 +58,7 @@ const AdminFile = () => {
               </div>
             </Typography>
           </Grid>
-          <Grid item md={2} className={classes.buttons}>
+          <Grid item md={2} sm={12} xs={12} className={classes.buttons} id="edit-buttons">
             <Button variant="contained" color="secondary" size="small">
               Delete
             </Button>
