@@ -36,7 +36,7 @@ const MainContent = () => {
     <Layout>
       <Container>
         <Paper
-          style={{ marginTop: -50, padding: 20 }}
+          style={{ marginTop: -50, padding: 20,height:'auto' }}
           className="container"
           elevation={10}
         >
