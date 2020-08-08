@@ -11,7 +11,7 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 import { Paper } from "@material-ui/core";
-import TablePagination from '@material-ui/core/TablePagination';
+import TablePagination from "@material-ui/core/TablePagination";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -64,9 +64,10 @@ const PaginationComponent = () => {
         <Paper className={classes.paper} elevation={4}>
           <FormControl className={classes.margin} fullWidth>
             <TextField
-              id="standard-helperText"
-              defaultValue="Keyword"
-              helperText="Search by keyword"
+              id="filled-search"
+              label="Search keyword"
+              type="search"
+              variant="filled"
             />
           </FormControl>
         </Paper>
