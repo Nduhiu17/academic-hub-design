@@ -9,6 +9,8 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+import Tooltip from "@material-ui/core/Tooltip";
+import Zoom from "@material-ui/core/Zoom";
 
 const File = () => {
   const preventDefault = (event) => event.preventDefault();
@@ -18,7 +20,12 @@ const File = () => {
       <Paper elevation={4}>
         <Grid container spacing={2}>
           <Grid item md={1}>
-            <img src={wordImg} alt="" style={{ width: "100%" }} className='file-image'/>
+            <img
+              src={wordImg}
+              alt=""
+              style={{ width: "100%" }}
+              className="file-image"
+            />
           </Grid>
           <Grid item md={9}>
             <Typography
@@ -54,7 +61,7 @@ const File = () => {
               </Accordion>
             </div>
           </Grid>
-          <Grid item md={2} sm={12} className='price-add-to-cart'>
+          <Grid item md={2} sm={12} className="price-add-to-cart">
             <Typography>
               <Button variant="fab" large style={{ color: "#ff8c00" }}>
                 <AttachMoneyIcon fontSize="large" />
@@ -63,10 +70,12 @@ const File = () => {
             </Typography>
             <Divider />
             <Typography>
-              <Button variant="fab" large style={{ color: "#ff8c00" }}>
-                <AddShoppingCartIcon fontSize="large" />
-                Add to Cart
-              </Button>
+              <Tooltip TransitionComponent={Zoom} title="Add to cart">
+                <Button variant="fab" large style={{ color: "#ff8c00" }}>
+                  <AddShoppingCartIcon fontSize="large" />
+                  Add to Cart
+                </Button>
+              </Tooltip>
             </Typography>
           </Grid>
         </Grid>

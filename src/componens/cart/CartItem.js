@@ -5,6 +5,8 @@ import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { Paper, Grid, Button } from "@material-ui/core";
+import Tooltip from "@material-ui/core/Tooltip";
+import Zoom from "@material-ui/core/Zoom";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -48,7 +50,7 @@ export default function CartItem() {
           1
         </Grid>
         <Grid item md={2} style={{ color: "#ff8c00" }}>
-        <AttachMoneyIcon />
+          <AttachMoneyIcon />
           100
         </Grid>
         <Grid item md={2} style={{ color: "#ff8c00" }}>
@@ -58,18 +60,20 @@ export default function CartItem() {
       </Grid>
       <Grid container spacing={2} justify="flex-end">
         <Grid item md={2} xs={12} sm={12}>
-          <Paper style={{ padding: 10 }} elevation={8}>
-            <FavoriteBorderIcon color="secondary" />
-            <Button>save items</Button>
-          </Paper>
+          <Tooltip TransitionComponent={Zoom} title="Move to saved items">
+            <Paper style={{ padding: 10 }} elevation={8}>
+              <FavoriteBorderIcon color="secondary" />
+              <Button>save items</Button>
+            </Paper>
+          </Tooltip>
         </Grid>
-        <Grid md={2} xs={12} sm={12}  style={{ marginTop: 8 }}>
-          <Paper
-            style={{ padding: 10 }} elevation={8}
-          >
-            <RemoveShoppingCartIcon color="secondary" />
+        <Grid md={2} xs={12} sm={12} style={{ marginTop: 8 }}>
+          <Tooltip TransitionComponent={Zoom} title="Remove item">
+            <Paper style={{ padding: 10 }} elevation={8}>
+              <RemoveShoppingCartIcon color="secondary" />
               <Button>Remove</Button>
-          </Paper>
+            </Paper>
+          </Tooltip>
         </Grid>
       </Grid>
     </Paper>

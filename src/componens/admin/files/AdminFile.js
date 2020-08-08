@@ -10,11 +10,13 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import Tooltip from "@material-ui/core/Tooltip";
+import Zoom from "@material-ui/core/Zoom";
 
 const useStyles = makeStyles((theme) => ({
   Paper: {
     padding: 20,
-    marginBottom:20
+    marginBottom: 20,
   },
   buttons: {
     display: "flex",
@@ -58,13 +60,24 @@ const AdminFile = () => {
               </div>
             </Typography>
           </Grid>
-          <Grid item md={2} sm={12} xs={12} className={classes.buttons} id="edit-buttons">
-            <Button variant="contained" color="secondary" size="small">
-              Delete
-            </Button>
-            <Button variant="contained" size="small">
-              Edit
-            </Button>
+          <Grid
+            item
+            md={2}
+            sm={12}
+            xs={12}
+            className={classes.buttons}
+            id="edit-buttons"
+          >
+            <Tooltip TransitionComponent={Zoom} title="Delete file">
+              <Button variant="contained" color="secondary" size="small">
+                Delete
+              </Button>
+            </Tooltip>
+            <Tooltip TransitionComponent={Zoom} title="Edit file content">
+              <Button variant="contained" size="small">
+                Edit
+              </Button>
+            </Tooltip>
           </Grid>
         </Grid>
       </Paper>
