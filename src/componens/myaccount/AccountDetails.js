@@ -23,7 +23,7 @@ const AccountDetails = () => {
   const classes = useStyles();
   return (
     <AccountLayout>
-      <Grid container spacing={2}>
+      <Grid container spacing={0}>
         <Grid container justify="flex-start">
           <Grid item md={6}>
             <CardHeader
