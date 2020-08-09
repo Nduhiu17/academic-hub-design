@@ -6,6 +6,7 @@ import CategoryIcon from "@material-ui/icons/Category";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
+import CategoryAndSubCategoryContainer  from "./CategoryAndSubCategoryContainer";
 
 const dashboardRoutes = [
   {
@@ -19,14 +20,14 @@ const dashboardRoutes = [
     path: "/admin/files",
     component: FileList,
     name: "Files",
-    icon: <LibraryBooksIcon color="action"  fontSize="large"/>,
+    icon: <LibraryBooksIcon color="action" fontSize="large" />,
     routes: [],
   },
   {
     path: "/admin/categories",
-    component: FileList,
+    component: CategoryAndSubCategoryContainer,
     name: "Categories",
-    icon: <CategoryIcon color="action"  fontSize="large"/>,
+    icon: <CategoryIcon color="action" fontSize="large" />,
     routes: [],
   },
 ];
@@ -36,21 +37,21 @@ export const supportRoutes = [
     path: "/admin/users",
     component: AdminDashboard, // dashboard
     name: "Users",
-    icon: <AccountCircleIcon color="action"  fontSize="large"/>,
+    icon: <AccountCircleIcon color="action" fontSize="large" />,
     routes: [],
   },
   {
     path: "/admin/admin",
     component: FileList,
     name: "Orders",
-    icon: <BusinessCenterIcon color="action"  fontSize="large"/>,
+    icon: <BusinessCenterIcon color="action" fontSize="large" />,
     routes: [],
   },
   {
     path: "/admin/market",
     component: FileList,
     name: "Accounts",
-    icon: <AccountBalanceIcon color="action"  fontSize="large"/>,
+    icon: <AccountBalanceIcon color="action" fontSize="large" />,
     routes: [],
   },
 ];
