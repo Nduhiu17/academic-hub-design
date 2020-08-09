@@ -48,11 +48,14 @@ export const SubCategorySelect = () => {
           id="demo-simple-select-helper"
           value={age}
           onChange={handleSubcategoryChange}
+          autoWidth={true}
         >
           <MenuItem value="">
             <em>None</em>
           </MenuItem>
-          <MenuItem value={10}>Medical</MenuItem>
+          <MenuItem value={10} dense>
+            Medicalwwwww wwwwwwwwwwwwww wwwwwwwwwwwwwwwwwww
+          </MenuItem>
           <MenuItem value={20}>Engineering</MenuItem>
           <MenuItem value={30}>Procurement</MenuItem>
         </Select>

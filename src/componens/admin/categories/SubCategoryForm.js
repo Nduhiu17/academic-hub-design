@@ -38,6 +38,14 @@ const useStyles = makeStyles((theme) => ({
 
 export const SubCategoryForm = () => {
   const classes = useStyles();
+  const CHARACTER_LIMIT = 46;
+  const [values, setValues] = React.useState({
+    title: "title",
+  });
+
+  const handleChange = (name) => (event) => {
+    setValues({ ...values, [name]: event.target.value });
+  };
   return (
     <Paper elevation={8} className={classes.wrapper}>
       <form className={classes.root} noValidate autoComplete="off"></form>
@@ -49,12 +57,16 @@ export const SubCategoryForm = () => {
               className={classes.margin}
               variant="outlined"
             >
-              <InputLabel htmlFor="outlined-adornment-amount">Title</InputLabel>
-              <OutlinedInput
-                id="outlined-adornment-amount"
-                value={""}
-                onChange={""}
-                labelWidth={60}
+              <TextField
+                label="Title"
+                inputProps={{
+                  maxlength: CHARACTER_LIMIT,
+                }}
+                value={values.title}
+                helperText={`${values.title.length}/${CHARACTER_LIMIT}`}
+                onChange={handleChange("title")}
+                margin="normal"
+                variant="outlined"
               />
             </FormControl>
           </Paper>

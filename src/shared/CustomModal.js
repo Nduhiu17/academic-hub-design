@@ -1,5 +1,4 @@
 import React from "react";
-import CloseIcon from "@material-ui/icons/Close";
 import {
   Button,
   Dialog,
@@ -51,7 +50,7 @@ export const CustomDialog = ({
             onClick={handleClose}
             style={{ color: "#fff", backgroundColor: "#ff8c00" }}
           >
-            <CloseIcon />
+            Close
           </Button>
         </Tooltip>
       </DialogActions>
