@@ -2,6 +2,7 @@ import React from "react";
 import { Paper, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import AdminLayout from "./AdminLayout";
+import { SubCategory } from "./subcategories/SubCategory";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,10 +21,14 @@ const CategoryAndSubCategoryContainer = () => {
     <AdminLayout>
       <Grid container spacing={4}>
         <Grid item md={6} xs={12} sm={12}>
-          <Paper className={classes.paper} elevation={4}>a</Paper>
+          <Paper className={classes.paper} elevation={4}>
+            <SubCategory />
+          </Paper>
         </Grid>
         <Grid item md={6} xs={12} sm={12}>
-          <Paper className={classes.paper} elevation={4}>a</Paper>
+          <Paper className={classes.paper} elevation={4}>
+            <SubCategory/>
+          </Paper>
         </Grid>
       </Grid>
     </AdminLayout>

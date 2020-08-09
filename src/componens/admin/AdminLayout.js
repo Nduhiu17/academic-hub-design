@@ -121,7 +121,7 @@ const AdminLayout = (props) => {
           >
             <MenuIcon />
           </IconButton>
-          <Link to="/" style={{ color: "inherit" }}>
+          <Link to="/" style={{ color: "#ff8c00" }}>
             <Typography variant="h6" noWrap>
               BACK TO WEBSITE
             </Typography>
