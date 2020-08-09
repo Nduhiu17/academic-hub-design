@@ -66,6 +66,10 @@ export default function NavMenu() {
             <Button className={classes.badge}>ADMIN DASHBOARD</Button>
           </Link>
 
+          <Link to="/account/details" className={classes.links}>
+            <Button className={classes.badge}>My Account</Button>
+          </Link>
+
           <Link to="/cart" className={classes.links}>
             <Button className={classes.badge}>
               <Badge badgeContent={4} color="secondary" className={""}>
@@ -90,7 +94,7 @@ export default function NavMenu() {
             <Link to="/login" className={classes.links}>
               <MenuItem onClick={handleClose}>Login</MenuItem>
             </Link>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
+
             <Link to="/register" className={classes.links}>
               <MenuItem onClick={handleClose}>Register</MenuItem>
             </Link>
