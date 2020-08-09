@@ -39,7 +39,7 @@ const Cart = () => {
     <Layout>
       <Container>
         <Paper className={classes.root} elevation={10}>
-          <Typography variant="h2">Cart</Typography>
+          <Typography variant="h3">Cart</Typography>
           <Typography variant="h6">Your order(2 items)</Typography>
           <Grid container justify="space-between" className={classes.header}>
             <Grid item md={6}>
