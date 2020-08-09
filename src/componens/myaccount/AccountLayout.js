@@ -15,9 +15,9 @@ const AccountLayout = (props) => {
     <Typography>
       <NavMenu />
 
-      <Container style={{ minHeight: "50vh", padding: 20 }}>
+      <Container style={{ minHeight: "50vh",padding:15}}>
         <Grid container spacing={2}>
-          <Grid item md={3} sm={6} xs={4}>
+          <Grid item md={3} sm={12} xs={12}>
             <Paper elevation={4}>
               <List>
                 {accountRoutes.map((route, index) => {
@@ -35,7 +35,7 @@ const AccountLayout = (props) => {
               </List>
             </Paper>
           </Grid>
-          <Grid item md={9} sm={6} xs={8}>
+          <Grid item md={9} sm={12} xs={12}>
             <Paper elevation={4}>
               <Typography paragraph>{props.children}</Typography>
             </Paper>
