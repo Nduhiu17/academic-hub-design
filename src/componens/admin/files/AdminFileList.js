@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { createStyles } from "@material-ui/core/styles";
 import { CustomDialog } from "../../../shared/CustomModal";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import { FileForm } from "./FileForm";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -51,7 +52,7 @@ const AdminFileList = () => {
               }}
               onClick={handleDialogOpen}
             >
-              <CloudUploadIcon style={{marginRight:12}}/>
+              <CloudUploadIcon style={{ marginRight: 12 }} />
               Upload File
             </Button>
           </Typography>
@@ -67,7 +68,7 @@ const AdminFileList = () => {
         handleClose={handleDialogClose}
         title="Upload file"
       >
-        <h1>Hello cheche</h1>
+        <FileForm />
       </CustomDialog>
     </AdminLayout>
   );

@@ -1,17 +1,13 @@
 import React from "react";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
-
-import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import Select from "@material-ui/core/Select";
-import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 import { Paper } from "@material-ui/core";
 import TablePagination from "@material-ui/core/TablePagination";
+import { CategorySelect } from "./CategorySelect";
+import { FileSearch } from "./FileSearch";
+import { SubCategorySelect } from "./SubCategorySelect";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
 const PaginationComponent = () => {
   const classes = useStyles();
 
-  const [age, setAge] = React.useState("");
   const [page, setPage] = React.useState(2);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -50,73 +45,16 @@ const PaginationComponent = () => {
     setPage(0);
   };
 
-  const handleCategoryChange = (event) => {
-    setAge(event.target.value);
-  };
-
-  const handleSubcategoryChange = (event) => {
-    setAge(event.target.value);
-  };
-
   return (
     <React.Fragment>
       <Grid item xs={12} md={3} sm={12}>
-        <Paper className={classes.paper} elevation={4}>
-          <FormControl className={classes.margin} fullWidth>
-            <TextField
-              id="filled-search"
-              label="Search keyword"
-              type="search"
-              variant="filled"
-            />
-          </FormControl>
-        </Paper>
+        <FileSearch />
       </Grid>
       <Grid item xs={12} md={3} sm={12}>
-        <Paper className={classes.paper} elevation={4}>
-          <FormControl className={classes.formControl} fullWidth>
-            <InputLabel id="demo-simple-select-helper-label">
-              Category
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-helper-label"
-              id="demo-simple-select-helper"
-              value={age}
-              onChange={handleCategoryChange}
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={10}>Medical</MenuItem>
-              <MenuItem value={20}>Engineering</MenuItem>
-              <MenuItem value={30}>Procurement</MenuItem>
-            </Select>
-            <FormHelperText>Select category</FormHelperText>
-          </FormControl>
-        </Paper>
+        <CategorySelect />
       </Grid>
       <Grid item xs={12} md={3} sm={12}>
-        <Paper className={classes.paper} elevation={4}>
-          <FormControl className={classes.formControl} fullWidth>
-            <InputLabel id="demo-simple-select-helper-label">
-              Subcategory
-            </InputLabel>
-            <Select
-              labelId="demo-simple-select-helper-label"
-              id="demo-simple-select-helper"
-              value={age}
-              onChange={handleSubcategoryChange}
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={10}>Medical</MenuItem>
-              <MenuItem value={20}>Engineering</MenuItem>
-              <MenuItem value={30}>Procurement</MenuItem>
-            </Select>
-            <FormHelperText>Select sub-category</FormHelperText>
-          </FormControl>
-        </Paper>
+        <SubCategorySelect />
       </Grid>
       <Grid item xs={12} md={3} sm={12}>
         <Paper className={classes.paper} elevation={4}>
@@ -127,6 +65,7 @@ const PaginationComponent = () => {
             className={classes.button}
             endIcon={<Icon>send</Icon>}
             disableElevation
+            style={{display:'flex',width:'100%'}}
           >
             Search
           </Button>
