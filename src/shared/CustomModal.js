@@ -31,17 +31,29 @@ export const CustomDialog = ({
       TransitionComponent={Fade}
       transitionDuration={220}
     >
-      <DialogTitle id="max-width-dialog-title">{title}</DialogTitle>
+      <DialogTitle
+        id="max-width-dialog-title"
+        style={{
+          textTransform: "uppercase",
+          fontWeight: "bolder",
+          color: "#ff8c00",
+        }}
+      >
+        {title}
+      </DialogTitle>
       <DialogContent>
         <DialogContentText>{subtitle}</DialogContentText>
         {children}
       </DialogContent>
       <DialogActions>
-      <Tooltip TransitionComponent={Zoom} title="Close">
-        <Button onClick={handleClose} style={{ color: "#fff",backgroundColor:'#ff8c00' }}>
-          <CloseIcon />
-        </Button>
-      </Tooltip>
+        <Tooltip TransitionComponent={Zoom} title="Close">
+          <Button
+            onClick={handleClose}
+            style={{ color: "#fff", backgroundColor: "#ff8c00" }}
+          >
+            <CloseIcon />
+          </Button>
+        </Tooltip>
       </DialogActions>
     </Dialog>
   );
