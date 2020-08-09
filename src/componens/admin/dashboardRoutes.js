@@ -6,7 +6,7 @@ import CategoryIcon from "@material-ui/icons/Category";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
-import CategoryAndSubCategoryContainer  from "./CategoryAndSubCategoryContainer";
+import CategoryAndSubCategoryContainer from "./categories/CategoryAndSubCategoryContainer";
 
 const dashboardRoutes = [
   {

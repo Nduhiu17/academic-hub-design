@@ -1,8 +1,8 @@
 import React from "react";
 import { Paper, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import AdminLayout from "./AdminLayout";
-import { CategoryList } from "./categories/CategoryList";
+import AdminLayout from "../AdminLayout";
+import { CategoryList } from "./CategoryList";
 
 const useStyles = makeStyles((theme) => ({
   root: {
