@@ -12,9 +12,8 @@ import accountRoutes from "./accountRoutes";
 
 const AccountLayout = (props) => {
   return (
-    <Typography>
+    <Typography style={{overflow:'hidden'}}>
       <NavMenu />
-
       <Container style={{ minHeight: "50vh",padding:15}}>
         <Grid container spacing={2}>
           <Grid item md={3} sm={12} xs={12}>
