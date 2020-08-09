@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Typography } from "@material-ui/core";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -11,17 +11,27 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
 import GroupWorkIcon from "@material-ui/icons/GroupWork";
 import Tooltip from "@material-ui/core/Tooltip";
+import { CustomDialog } from "../../../shared/CustomModal";
+import { CategoryForm } from "./CategoryForm";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // width: "100%",
-    // maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
 }));
 
-export const CategoryItem = ({ title, subtitle }) => {
+export const CategoryItem = ({ title, headTitle, subtitle }) => {
   const classes = useStyles();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleDialogClose = () => {
+    // setIsEditing(true);
+    setIsOpen(false);
+  };
+
+  const handleDialogOpen = () => {
+    setIsOpen(true);
+  };
   return (
     <Typography>
       <ListItem className={classes.ListItem}>
@@ -38,21 +48,28 @@ export const CategoryItem = ({ title, subtitle }) => {
                 <GroupWorkIcon />
               </Avatar>
             </ListItemAvatar>
-            <ListItemText
-              primary={title}
-              secondary={subtitle}
-            />
+            <ListItemText primary={title} secondary={subtitle} />
           </Typography>
           <Typography>
             <Tooltip TransitionComponent={Zoom} title="Delete">
               <DeleteIcon style={{ marginRight: 12, color: "red" }} />
             </Tooltip>
             <Tooltip TransitionComponent={Zoom} title="Edit">
-              <EditIcon style={{ marginRight: 12, color: "green" }} />
+              <EditIcon
+                style={{ marginRight: 12, color: "green" }}
+                onClick={handleDialogOpen}
+              />
             </Tooltip>
           </Typography>
         </Grid>
       </ListItem>
+      <CustomDialog
+        isOpen={isOpen}
+        handleClose={handleDialogClose}
+        title="Edit"
+      >
+        <CategoryForm />
+      </CustomDialog>
     </Typography>
   );
 };
