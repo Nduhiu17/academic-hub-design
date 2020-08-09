@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const CategoryItem = () => {
+export const CategoryItem = ({ title, subtitle }) => {
   const classes = useStyles();
   return (
     <Typography>
@@ -38,13 +38,16 @@ export const CategoryItem = () => {
                 <GroupWorkIcon />
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="Computer Science" secondary="Jan 9, 2014" />
+            <ListItemText
+              primary={title}
+              secondary={subtitle}
+            />
           </Typography>
           <Typography>
-            <Tooltip TransitionComponent={Zoom} title="Delete category">
+            <Tooltip TransitionComponent={Zoom} title="Delete">
               <DeleteIcon style={{ marginRight: 12, color: "red" }} />
             </Tooltip>
-            <Tooltip TransitionComponent={Zoom} title="Edit category">
+            <Tooltip TransitionComponent={Zoom} title="Edit">
               <EditIcon style={{ marginRight: 12, color: "green" }} />
             </Tooltip>
           </Typography>
