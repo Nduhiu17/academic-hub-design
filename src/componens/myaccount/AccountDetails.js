@@ -52,7 +52,7 @@ const AccountDetails = () => {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small">Change Password</Button>
+                <Button size="small" style={{backgroundColor:'#ff8c00',color:'#fff'}}>Change Password</Button>
               </CardActions>
             </Card>
           </Paper>

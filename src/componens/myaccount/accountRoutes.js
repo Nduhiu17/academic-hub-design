@@ -1,7 +1,7 @@
 import React from "react";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
-import CategoryIcon from "@material-ui/icons/Category";
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 import AccountDetails from "./AccountDetails";
 import Purchased from "./Purchased";
 import Saved from "./Saved";
@@ -11,21 +11,21 @@ const accountRoutes = [
     path: "/account/details",
     component: AccountDetails,
     name: "Account Details",
-    icon: <DashboardIcon color="action" fontSize="large" />,
+    icon: <AccountBoxIcon fontSize="large" style={{color:'#ff8c00'}}/>,
     routes: [],
   },
   {
     path: "/account/purchased",
     component: Purchased,
     name: "Purchased items",
-    icon: <LibraryBooksIcon color="action" fontSize="large" />,
+    icon: <ShoppingBasketIcon  fontSize="large" style={{color:'#ff8c00'}}/>,
     routes: [],
   },
   {
     path: "/account/saved",
     name: "Saved items",
     component: Saved,
-    icon: <CategoryIcon color="action" fontSize="large" />,
+    icon: <FavoriteIcon fontSize="large" style={{color:'#ff8c00'}}/>,
     routes: [],
   },
 ];
