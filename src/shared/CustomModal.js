@@ -1,4 +1,5 @@
 import React from "react";
+import CloseIcon from "@material-ui/icons/Close";
 import {
   Button,
   Dialog,
@@ -9,6 +10,8 @@ import {
 } from "@material-ui/core";
 import propTypes from "prop-types";
 import Fade from "@material-ui/core/Fade";
+import Tooltip from "@material-ui/core/Tooltip";
+import Zoom from "@material-ui/core/Zoom";
 
 export const CustomDialog = ({
   isOpen,
@@ -34,12 +37,11 @@ export const CustomDialog = ({
         {children}
       </DialogContent>
       <DialogActions>
-        <Button
-          onClick={handleClose}
-          style={{ color: "#fff", backgroundColor: "#ff8c00" }}
-        >
-          Close
+      <Tooltip TransitionComponent={Zoom} title="Close">
+        <Button onClick={handleClose} style={{ color: "#fff",backgroundColor:'#ff8c00' }}>
+          <CloseIcon />
         </Button>
+      </Tooltip>
       </DialogActions>
     </Dialog>
   );

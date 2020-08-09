@@ -8,12 +8,15 @@ const styles = (theme) => ({
       [theme.breakpoints.down("sm")]: {
         fontSize: 11,
       },
+      maincontent:{
+          zIndex:10
+      }
     },
   }
 });
 
 export default withStyles(styles)(({ classes }) => (
-  <Typography>
+  <Typography className='maincontent'>
     <div className="header-wrapper">
       <div className="header-content">
         <Typography variant="h2" gutterBottom className="title-main">

@@ -13,6 +13,8 @@ import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import Zoom from "@material-ui/core/Zoom";
 import { CustomDialog } from "../../../shared/CustomModal";
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
   Paper: {
@@ -80,6 +82,7 @@ const AdminFile = () => {
           >
             <Tooltip TransitionComponent={Zoom} title="Delete file">
               <Button variant="contained" color="secondary" size="small">
+                <DeleteIcon style={{marginRight:12}}/>
                 Delete
               </Button>
             </Tooltip>
@@ -89,6 +92,7 @@ const AdminFile = () => {
                 size="small"
                 onClick={handleDialogOpen}
               >
+                <EditIcon style={{marginRight:12}}/>
                 Edit
               </Button>
             </Tooltip>

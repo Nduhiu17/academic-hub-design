@@ -37,7 +37,7 @@ export default function Footer() {
       <Paper>
         <AppBar position="static" className={classes.footer}>
           <Toolbar>
-            <Typography component="span">&copy; Academic Hub</Typography>
+            <Typography component="span">&copy; Academic Hub 2020</Typography>
           </Toolbar>
         </AppBar>
       </Paper>

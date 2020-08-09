@@ -6,6 +6,7 @@ import { Grid, Button, Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { createStyles } from "@material-ui/core/styles";
 import { CustomDialog } from "../../../shared/CustomModal";
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -50,6 +51,7 @@ const AdminFileList = () => {
               }}
               onClick={handleDialogOpen}
             >
+              <CloudUploadIcon style={{marginRight:12}}/>
               Upload File
             </Button>
           </Typography>
