@@ -1,16 +1,9 @@
 import React from "react";
 import { Paper, Grid, TextField, Toolbar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { CategorySelect } from "../../../shared/CategorySelect";
-import { SubCategorySelect } from "../../../shared/SubCategorySelect";
-
-import InputLabel from "@material-ui/core/InputLabel";
-import InputAdornment from "@material-ui/core/InputAdornment";
 import FormControl from "@material-ui/core/FormControl";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
 import SaveIcon from "@material-ui/icons/Save";
 import Button from "@material-ui/core/Button";
-import { FormHelperText } from "@material-ui/core/FormHelperText";
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -29,7 +29,6 @@ const File = () => {
           </Grid>
           <Grid item md={9}>
             <Typography
-              variant="h6"
               style={{
                 fontWeight: 500,
                 fontSize: "1.2rem",

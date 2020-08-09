@@ -38,23 +38,38 @@ const useStyles = makeStyles((theme) => ({
 
 export const FileForm = () => {
   const classes = useStyles();
+
+  const CHARACTER_LIMIT = 180;
+  const [values, setValues] = React.useState({
+    title: "title",
+  });
+
+  const handleChange = (name) => (event) => {
+    setValues({ ...values, [name]: event.target.value });
+  };
+
+
   return (
     <Paper elevation={8} className={classes.wrapper}>
       <form className={classes.root} noValidate autoComplete="off"></form>
       <Grid container>
         <Grid item md={12} sm={12} xs={12} fullWidth>
           <Paper elevation={4}>
-            <FormControl
+           <FormControl
               fullWidth
               className={classes.margin}
               variant="outlined"
             >
-              <InputLabel htmlFor="outlined-adornment-amount">Title</InputLabel>
-              <OutlinedInput
-                id="outlined-adornment-amount"
-                value={""}
-                onChange={""}
-                labelWidth={60}
+              <TextField
+                label="Title"
+                inputProps={{
+                  maxlength: CHARACTER_LIMIT,
+                }}
+                value={values.title}
+                helperText={`${values.title.length}/${CHARACTER_LIMIT}`}
+                onChange={handleChange("title")}
+                margin="normal"
+                variant="outlined"
               />
             </FormControl>
           </Paper>

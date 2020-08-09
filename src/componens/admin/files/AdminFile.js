@@ -45,11 +45,12 @@ const AdminFile = () => {
     <Typography gutterBottom>
       <Paper className={classes.Paper}>
         <Grid container>
-          <Grid item md={10}>
+          <Grid item md={10} sm={12} xs={12}>
             <Typography md={12}>
               Easily generate Lorem Ipsum placeholder text in any number of
               characters, words sentences or paragraphs. Learn about the origins
-              of the passage and its .
+              of the passage and its.Learn about the origins of the passage and
+              its.
             </Typography>
             <Typography md={12}>
               <div className={""}>
