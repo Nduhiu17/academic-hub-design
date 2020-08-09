@@ -9,6 +9,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Zoom from "@material-ui/core/Zoom";
 import accountRoutes from "./accountRoutes";
+import Footer from '../Footer';
 
 const AccountLayout = (props) => {
   return (
@@ -41,6 +42,7 @@ const AccountLayout = (props) => {
           </Grid>
         </Grid>
       </Container>
+      <Footer/>
     </Typography>
   );
 };
