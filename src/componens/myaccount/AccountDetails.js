@@ -32,7 +32,8 @@ const AccountDetails = () => {
             />
           </Grid>
         </Grid>
-        <Grid item md={6}>
+        <Grid container>
+        <Grid item md={5}>
           <Paper>
             <Card className={classes.root} variant="outlined">
               <CardContent>
@@ -52,12 +53,17 @@ const AccountDetails = () => {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" style={{backgroundColor:'#ff8c00',color:'#fff'}}>Change Password</Button>
+                <Button
+                  size="small"
+                  style={{ backgroundColor: "#ff8c00", color: "#fff" }}
+                >
+                  Change Password
+                </Button>
               </CardActions>
             </Card>
           </Paper>
         </Grid>
-        <Grid item md={6}>
+        <Grid item md={5}>
           <Paper>
             <Card className={classes.root} variant="outlined">
               <CardContent>
@@ -78,6 +84,7 @@ const AccountDetails = () => {
               </CardContent>
             </Card>
           </Paper>
+        </Grid>
         </Grid>
       </Grid>
     </AccountLayout>

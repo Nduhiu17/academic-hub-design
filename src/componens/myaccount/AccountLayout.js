@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Paper, Toolbar, Container } from "@material-ui/core";
+import { Grid, Typography, Paper, Container } from "@material-ui/core";
 import NavMenu from "../NavMenu";
 import List from "@material-ui/core/List";
 import { Link } from "react-router-dom";

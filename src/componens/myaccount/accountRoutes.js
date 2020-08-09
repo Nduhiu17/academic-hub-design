@@ -17,13 +17,13 @@ const accountRoutes = [
   {
     path: "/account/purchased",
     component: Purchased,
-    name: "Purchased items",
+    name: "Purchased Items",
     icon: <ShoppingBasketIcon  fontSize="large" style={{color:'#ff8c00'}}/>,
     routes: [],
   },
   {
     path: "/account/saved",
-    name: "Saved items",
+    name: "Saved Items",
     component: Saved,
     icon: <FavoriteIcon fontSize="large" style={{color:'#ff8c00'}}/>,
     routes: [],
